@@ -1,15 +1,72 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+  const [isHiddenNav, setIsHiddenNav] = useState(true);
   return (
-    <header className="flex justify-between items-center py-10 w-[90%] mx-auto">
-      <nav className="flex items-center gap-5">
-        <Link to={"/home"}>Home</Link>
-        <Link to={"/collections"}>Collections</Link>
-        <Link to={"/new"}>New</Link>
+    <header className="flex justify-between items-center py-10 ">
+      <div className="sm:hidden relative">
+        <button onClick={() => setIsHiddenNav((prev) => !prev)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        {!isHiddenNav && (
+          <nav className="flex flex-col items-center gap-5 absolute bg-white py-4 px-3 border border-gray-400 rounded ">
+            <Link
+              className="text-sm sm:text-base md:text-lg xl:text-xl"
+              to={"/home"}
+            >
+              Home
+            </Link>
+            <Link
+              className="text-sm sm:text-base md:text-lg xl:text-xl"
+              to={"/collections"}
+            >
+              Collections
+            </Link>
+            <Link
+              className="text-sm sm:text-base md:text-lg xl:text-xl"
+              to={"/new"}
+            >
+              New
+            </Link>
+          </nav>
+        )}
+      </div>
+      <nav className="flex items-center gap-5 max-sm:hidden">
+        <Link
+          className="text-sm sm:text-base md:text-lg xl:text-xl"
+          to={"/home"}
+        >
+          Home
+        </Link>
+        <Link
+          className="text-sm sm:text-base md:text-lg xl:text-xl"
+          to={"/collections"}
+        >
+          Collections
+        </Link>
+        <Link
+          className="text-sm sm:text-base md:text-lg xl:text-xl"
+          to={"/new"}
+        >
+          New
+        </Link>
       </nav>
-      <div className="flex items-center gap-10">
-        <button className="text-white border-none rounded-full bg-black p-2.5">
+      <div className="flex items-center gap-10 max-sm:gap-3 max-md:gap-5 max-lg:gap-7">
+        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -26,7 +83,7 @@ const Header = () => {
           </svg>
         </button>
 
-        <button className="text-white border-none rounded-full bg-black p-2.5">
+        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -42,7 +99,7 @@ const Header = () => {
             />
           </svg>
         </button>
-        <button className="text-white border-none rounded-full bg-black p-2.5">
+        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
