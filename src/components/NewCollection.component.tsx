@@ -2,9 +2,9 @@ import Carusel from "./Carusel";
 
 const NewCollection = () => {
   return (
-    <div className="mt-13 gap-8 flex flex-col lg:flex-row w-full">
+    <div className="mt-12 gap-8 flex flex-col lg:flex-row w-full">
       <div className="flex flex-col gap-2.5 ">
-        <h1 className="text-5xl sm:text-base lg:text-6xl font-bold">
+        <h1 className="text-5xl lg:text-6xl font-bold">
           NEW <br /> COLLECTION
         </h1>
         <p>

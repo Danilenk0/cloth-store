@@ -7,14 +7,14 @@ const SearchForm = () => {
         <li className="text-sm sm:text-base md:text-lg xl:text-2xl">KIDS</li>
       </ul>
       <div className="flex items-center gap-3 rounded py-3 px-4 bg-[#D9D9D9] w-full sm:w-full md:w-[40%] border border-[#D9D9D9] focus-within:border-black">
-        <button className="border-0">
+        <button type="button" aria-label="Search" className="border-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"
@@ -24,9 +24,11 @@ const SearchForm = () => {
           </svg>
         </button>
         <input
+          id="site-search"
           className="text-[12px] outline-none w-full flex justify-end"
           type="text"
           placeholder="Search..."
+          aria-label="Search"
         />
       </div>
     </div>

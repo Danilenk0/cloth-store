@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper styles (centralized) */
 @import "swiper/css";
 @import "swiper/css/navigation";
-@import "tailwindcss";
-
-@theme {
-  --font-inter: "Saira Stencil", sans-serif;
-}
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
 body {
   font-family: "Saira Stencil", sans-serif;

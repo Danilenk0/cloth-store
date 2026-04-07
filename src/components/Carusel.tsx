@@ -6,10 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import type { Swiper as SwiperClass } from "swiper";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// Swiper styles are imported centrally in src/index.css — avoid duplicate imports here
 
 import { useRef } from "react";
 
@@ -36,7 +33,6 @@ const Carusel = () => {
           1024: { slidesPerView: 3 },
         }}
         loop={true} // бесконечный слайд
-        loopFillGroupWithBlank={true}
         centeredSlides={true}
         className="relative"
       >
@@ -44,8 +40,11 @@ const Carusel = () => {
           <SwiperSlide key={i}>
             <img
               src={img}
-              alt={`slide-${i}`}
+              alt={`Slide ${i + 1}`}
+              loading="lazy"
               className="w-full h-[250px] lg:h-[350px] object-cover rounded"
+              width={800}
+              height={600}
             />
           </SwiperSlide>
         ))}
@@ -53,7 +52,7 @@ const Carusel = () => {
 
       {/* Кнопки "Go to shop" */}
       <div className="flex items-center gap-5 mt-4">
-        <button className="flex items-center gap-3 bg-[#D9D9D9] rounded py-2 px-5">
+        <button type="button" className="flex items-center gap-3 bg-[#D9D9D9] rounded py-2 px-5">
           <p>Go to shop</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,12 +73,16 @@ const Carusel = () => {
         {/* Кастомные стрелки для ПК */}
         <div className="hidden lg:flex items-center gap-3">
           <button
+            type="button"
+            aria-label="Previous slide"
             onClick={() => swiperRef.current?.slidePrev()}
             className="px-3 py-2.5 border rounded bg-white hover:bg-gray-200 transition"
           >
             ←
           </button>
           <button
+            type="button"
+            aria-label="Next slide"
             onClick={() => swiperRef.current?.slideNext()}
             className="px-3 py-2.5 border rounded bg-white hover:bg-gray-200 transition"
           >

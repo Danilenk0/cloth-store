@@ -6,14 +6,14 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center py-10 ">
       <div className="sm:hidden relative">
-        <button onClick={() => setIsHiddenNav((prev) => !prev)}>
+        <button type="button" aria-expanded={!isHiddenNav} aria-label="Toggle menu" onClick={() => setIsHiddenNav((prev) => !prev)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-6"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -23,7 +23,7 @@ const Header = () => {
           </svg>
         </button>
         {!isHiddenNav && (
-          <nav className="flex flex-col items-center gap-5 absolute bg-white py-4 px-3 border border-gray-400 rounded ">
+          <nav className="flex flex-col items-center gap-5 absolute bg-white py-4 px-3 border border-gray-400 rounded " role="menu">
             <Link
               className="text-sm sm:text-base md:text-lg xl:text-xl"
               to={"/home"}
@@ -45,7 +45,7 @@ const Header = () => {
           </nav>
         )}
       </div>
-      <nav className="flex items-center gap-5 max-sm:hidden">
+      <nav className="flex items-center gap-5 hidden sm:flex">
         <Link
           className="text-sm sm:text-base md:text-lg xl:text-xl"
           to={"/home"}
@@ -65,15 +65,15 @@ const Header = () => {
           New
         </Link>
       </nav>
-      <div className="flex items-center gap-10 max-sm:gap-3 max-md:gap-5 max-lg:gap-7">
-        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
+      <div className="flex items-center gap-10 sm:gap-3 md:gap-5 lg:gap-7">
+        <button type="button" aria-label="Favorites" className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"
@@ -83,14 +83,14 @@ const Header = () => {
           </svg>
         </button>
 
-        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
+        <button type="button" aria-label="Cart" className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"
@@ -99,14 +99,14 @@ const Header = () => {
             />
           </svg>
         </button>
-        <button className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
+        <button type="button" aria-label="Profile" className="text-white border-none rounded-full bg-black p-2.5 md:p-3 lg:p-3.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"

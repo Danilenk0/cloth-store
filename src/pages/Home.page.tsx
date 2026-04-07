@@ -2,7 +2,7 @@ import Header from "../components/Header.component";
 import SearchForm from "../components/SearchForm.component";
 import NewCollection from "../components/NewCollection.component";
 
-const App = () => {
+const Home = () => {
   return (
     <div className="w-[90%] mx-auto">
       <Header />
@@ -12,4 +12,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
